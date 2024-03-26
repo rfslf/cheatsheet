@@ -1,0 +1,21 @@
+I   Settings
+        django_ckeditor_5 ... Done
+        psql
+II  Model
+        metrics ... Done
+        activity ... Done
+III View
+        activity ... Done
+IV  Forms
+        Tips edit form ... Done
+V   URL
+        sheet.urls ... Done
+        ckeditor5 ... Done
+VI  Admin
+        edit form ... Done
+VII TEMPLATES
+        Category - color palette ... Done
+        Tips dimension
+        Default - icons ... Done
+        About page ... Done
+

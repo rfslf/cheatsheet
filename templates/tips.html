@@ -1,0 +1,29 @@
+{% extends 'default.html' %}
+
+{% block title %}
+    Tips
+{% endblock title %}
+
+{% block content %}
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img class="icon" src="static/image/home.svg" alt="dots icon"></a>
+            <h2>{{ request.path }}</h2>
+            <a class="navbar-brand" href="/about/"><img class="icon" src="static/image/question.svg" alt="dots icon"></a>
+        </div>
+    </nav>
+    <div class="d-flex flex-column flex-wrap bd-highlight mb-3" style="margin-top:75px">
+        {% for tip in tips_list %}
+            <div class="p-0 bd-highlight border border-1 border-info lh-1" style="width: 250px;font-size: 10px;">
+                <!--
+                {% if forloop.counter == 1 %}
+                    <div class='border border-2'>{{ tip.section_tag }}</div>
+                {% endif %}
+                <div class="text-end">{{ forloop.counter }}</div>
+                -->
+                <div>{{ tip.text | safe }}</div>
+                <div>{{ tip.priority }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
