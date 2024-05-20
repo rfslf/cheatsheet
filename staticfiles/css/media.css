@@ -1,0 +1,33 @@
+@media screen and (max-width: 650px){
+    #tips {
+    }
+    #cheatsheet {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 651px) and (max-width: 950px){
+    #tips {
+    }
+    #cheatsheet {
+        width: 650px;
+    }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1250px){
+    #tips {
+    }
+    #cheatsheet {
+        width: 950px;
+    }
+}
+
+@media screen and (min-width: 1251px){
+    #tips {
+    }
+    #cheatsheet {
+        width: 1250px;
+    }
+}
+
+

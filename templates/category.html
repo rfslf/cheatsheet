@@ -12,11 +12,10 @@
             <a class="navbar-brand" href="/about/"><img class="icon" src="static/image/question.svg" alt="dots icon"></a>
         </div>
     </nav>
-    <div class="d-flex flex-row flex-wrap bd-highlight mb-3" id='categories' style="margin-top:75px">
+    <div class="d-flex flex-row flex-wrap bd-highlight mb-3 justify-content-center" id='categories' style="margin-top:75px">
         {% for category in categories %}
-            <div class="p-2 bd-highlight border border-1 lh-1 category" style="width: 250px; hight:30px; font-size: 30px;">
+            <div class="p-2 bd-highlight border border-1 lh-1 category" title="{{ category.category_priority }}" style="width: 250px; height:60px; font-size: 30px;">
                 <div class="text-center"><a href="{% url 'tip' category.slug %}">{{ category.category }}</a></div>
-                <div>{{ category.category_priority }}</div>
             </div>
         {% endfor %}
     </div>

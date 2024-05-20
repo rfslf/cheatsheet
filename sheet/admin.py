@@ -19,6 +19,8 @@ class TextAdminForm(forms.ModelForm):
 
 class TextAdmin(admin.ModelAdmin):
 	form = TextAdminForm
+	list_display = ('category','section_tag','section','priority','dimension')
+	search_fields = ('section_tag',)
 
 
 admin.site.register(TipsText, TextAdmin)

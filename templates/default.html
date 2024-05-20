@@ -11,10 +11,11 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favorite.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/media.css' %}" rel="stylesheet" />
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
-        <div style="margin-left: auto;margin-right: auto;width: 750px;">
+        <div style="margin-left: auto;margin-right: auto;" id='cheatsheet'>
             {% block content %}
             {% endblock content %}
         </div>

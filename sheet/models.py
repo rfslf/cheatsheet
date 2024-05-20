@@ -41,4 +41,4 @@ class TipsText(models.Model):
 
 	# Печатаем красиво
 	def __str__(self):
-		return f'{self.category}: {self.section_tag}-{self.priority}'
+		return f'{self.category}-{self.section_tag}: {self.section}-{self.priority} ({self.dimension})'

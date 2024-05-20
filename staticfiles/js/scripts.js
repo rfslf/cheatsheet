@@ -5,11 +5,11 @@ window.addEventListener('DOMContentLoaded', event => {
     var categories = document.body.querySelectorAll(".category");
     var iter = 0
     categories.forEach(category => {
-        paletteIter = iter % 5
+        paletteIter = iter % 6
         category.style.backgroundColor = categoryColorPalette[paletteIter]
-        category.addEventListener('mouseover', event => {
-            category.style.color = categoryColorPalette[6]
-        });
-        iter =+ 1
+        //category.addEventListener('mouseover', event => {
+        //    category.style.backgroundColor = categoryColorPalette[6]
+        //});
+        iter++
     });
 });

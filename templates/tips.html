@@ -12,9 +12,9 @@
             <a class="navbar-brand" href="/about/"><img class="icon" src="static/image/question.svg" alt="dots icon"></a>
         </div>
     </nav>
-    <div class="d-flex flex-column flex-wrap bd-highlight mb-3" style="margin-top:75px">
+    <div class="d-flex flex-column flex-wrap align-content-center bd-highlight mb-3" data-rows="{{tips_len.dimension__sum}}" id='tips' style="margin-top:75px;">
         {% for tip in tips_list %}
-            <div class="p-0 bd-highlight border border-1 border-info lh-1" style="width: 250px;font-size: 10px;">
+            <div class="p-0 bd-highlight border border-1 border-info lh-1" title="{{ tip.section }}:{{ tip.priority }}/{{tip.dimension}}" style="width:290px;font-size:10px;">
                 <!--
                 {% if forloop.counter == 1 %}
                     <div class='border border-2'>{{ tip.section_tag }}</div>
@@ -22,8 +22,37 @@
                 <div class="text-end">{{ forloop.counter }}</div>
                 -->
                 <div>{{ tip.text | safe }}</div>
-                <div>{{ tip.priority }}</div>
+                <!--
+                <div>{{ tip.section_tag }} - {{ tip.priority }}</div>
+                -->
             </div>
         {% endfor %}
     </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', event => {
+            const rows = document.body.querySelector("#tips");
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            var height = window.screen.height;
+            console.log(width+'x'+height)
+            console.log(rows.dataset.rows)
+            if (width <= 950 && width > 651){
+                var tipsHeight = rows.dataset.rows*15/2;
+            } else if (width <= 1250 && width > 951){
+                var tipsHeight = rows.dataset.rows*15/3;
+            } else if (width <= 1550 && width > 1251){
+        	var tipsHeight = rows.dataset.rows*15/4;
+            } else if (width > 1551) {
+        	var tipsHeight = rows.dataset.rows*15/5;
+            } else {
+        	var tipsHeight = 10000;
+            }
+            console.log(tipsHeight);
+            if (tipsHeight < height ){
+            	rows.style.height = '90vh'
+            }
+            else {
+            	rows.style.height = tipsHeight + 'px';
+            }
+        });
+    </script>
 {% endblock content %}
